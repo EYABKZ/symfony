@@ -1,0 +1,42 @@
+Bonjour {{ n }}
+{% set a=5 %} {# déclaration d'une varuable #}
+{{ a }}
+<br>
+{% set tab=[1,2,3] %}
+{% set ch1="Hello" %}
+La chaine est: {{ ch1 }}
+<br>
+{% for i in tab %}
+    Tab[{{ i }}] = {{ i }}
+{% endfor %}
+<br>
+{% set tab2={'Nom':'Ben Foulen', 'Prenom':'Foulen'} %}
+{% for key,value in tab2 %}
+    {{ key }} : {{ value }}
+{% endfor %}
+<br>
+{% set b=3 %}
+{% if b==1 %}
+    C'est correct
+{% else %}
+    C'est faux
+{% endif %}
+<br>
+{# 2ème méthode (syntaxe tertiaire#}
+{{ b==1 ? 'cuest correct' : "C'est faux"}}
+<br>
+{%set ch4="hello"%}
+Upper :
+{{ ch4|upper}}
+<br>
+Length :
+{{ ch4|length}}
+<br>
+{{ dump(tab) }}
+{{ dump(tab2) }}
+<br>
+<a href="{{ url('app_author') }}">Home URL</a>
+<br>
+<a href="{{ path('app_author') }}">Home PATH</a>
+<br>
+<img width="500" height="300" src="{{asset("images/th.jpg")}}">
