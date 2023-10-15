@@ -92,7 +92,7 @@ class AuthorController extends AbstractController
     #[Route('/updateAuth/{id}', name: 'updateAuth')]
     public function updateAuth($id,AuthorRepository $repo,ManagerRegistry $manager,Request $Request){
         $author=$repo->find($id);
-        $form=$this->createForm(ListAuthorsType::class,$author);
+        $form=$this->createForm(\App\Form\ListAuthorsType::class,$author);
         $form->add('update',SubmitType::class);
         $form->handleRequest($Request);
 
