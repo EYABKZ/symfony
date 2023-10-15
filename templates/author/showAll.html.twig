@@ -1,0 +1,27 @@
+<html>
+<head>
+
+
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Actions</td>
+    </tr>
+    {% for Author in Authors %}
+        <tr>
+            <td> {{Author.ID}} </td>
+            <td> {{Author.Name}} </td>
+            <td> {{Author.Email}} </td>
+
+            <td>
+                <a href="{{ path('showAll', {'id': Author.id}) }}"> Show </a>
+              <a href="{{ path('deleteAuthor', {'id': Author.id}) }}"> Delete </a> }
+                {sy<a href="{{ path('updateAuth', {'id': Author.id}) }}"> Update </a> }
+            </td>
+        </tr>
+    {% endfor %}
+</table>

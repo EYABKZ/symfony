@@ -1,0 +1,18 @@
+<h1>Add new Author</h1>
+{#  {{form(ls)}}  #}
+
+{{ form_start(form) }}
+
+{{ form_label(form.Name,'le nom user') }}
+{{ form_widget(form.Name) }}
+{{ form_errors(form.Name) }}
+ls
+{# {{form_rows(form.username)}} #}
+
+{{ form_label(form.Email,'l email user') }}
+{{ form_widget(form.Email) }}
+{{ form_errors(form.Email) }}
+ls
+<button type="submit">Add</button>
+
+{{ form_end (form) }}ls
